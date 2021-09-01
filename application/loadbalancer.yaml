@@ -1,0 +1,13 @@
+loadbalancer.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: 2048-loadbalancer
+spec:
+  type: LoadBalancer
+  selector:
+    app: 2048
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
